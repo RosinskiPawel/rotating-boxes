@@ -1,0 +1,199 @@
+@import url('https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700&family=Lexend+Deca&display=swap');
+
+:root {
+  --color-sedans: hsl(31, 77%, 52%);
+  --color-suvs: hsl(184, 100%, 22%);
+  --color-luxury: hsl(179, 100%, 13%);
+  --color-par: hsla(0, 0%, 100%, 0.75);
+  --color-bhb: hsl(0, 0%, 95%);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-size: 1.5rem;
+  font-family: 'Big Shoulders Display', cursive;
+  font-family: 'Lexend Deca', sans-serif;
+  background-color: var(--color-bhb);
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: left;
+  min-height: 100vh;
+}
+.container_card {
+  position: relative;
+  width: 33rem;
+  height: 133rem;
+  background-color: var(--color-bhb);
+  border-radius: 1rem;
+  color: var(--color-bhb);
+}
+
+section {
+  width: auto;
+  height: 33.33%;
+}
+.sedans,
+.suvs,
+.luxury {
+  transition: 1s;
+  transform-style: preserve-3d;
+}
+.sedans {
+  background-color: var(--color-sedans);
+  border-radius: 1rem 1rem 0rem 0rem;
+}
+
+.suvs:hover,
+.sedans:hover,
+.luxury:hover {
+  transform: rotateY(180deg);
+}
+.front_sedans,
+.front_suvs,
+.front_luxury {
+  position: absolute;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  padding: 5rem;
+}
+.back_sedans,
+.back_suvs,
+.back_luxury {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 1rem 1rem 0rem 0rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: yellow;
+  font-size: x-large;
+  background-color: black;
+  transform: rotateY(180deg);
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+.back_suvs {
+  border-radius: 0rem;
+}
+.back_luxury {
+  border-radius: 0rem 0rem 1rem 1rem;
+}
+
+.picture {
+  background-repeat: no-repeat;
+  padding-bottom: 3rem;
+}
+.title {
+  font: 700 4rem 'Big Shoulders Display', cursive;
+  padding-bottom: 3rem;
+}
+
+.phrase {
+  line-height: 2.5rem;
+  padding-bottom: 2.5rem;
+  color: var(--color-par);
+}
+
+.button_sedans,
+.button_suvs,
+.button_luxury {
+  width: 15rem;
+  height: 5rem;
+  background-color: var(--color-bhb);
+  border-radius: 25rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: grab;
+}
+
+.button_sedans {
+  color: var(--color-sedans);
+}
+
+.suvs {
+  background-color: var(--color-suvs);
+}
+.button_suvs {
+  color: var(--color-suvs);
+}
+
+.luxury {
+  background-color: var(--color-luxury);
+  border-bottom-left-radius: 1rem;
+  border-bottom-right-radius: 1rem;
+}
+
+.button_luxury {
+  color: var(--color-luxury);
+}
+
+.button_sedans:hover,
+.button_suvs:hover,
+.button_luxury:hover {
+  background-color: initial;
+  border-style: solid;
+  border-color: var(--color-bhb);
+  color: var(--color-bhb);
+}
+
+@media only screen and (min-width: 1440px) {
+  .container {
+    display: flex;
+    justify-content: center;
+    text-align: left;
+    min-height: 100vh;
+  }
+  .container_card {
+    width: 92rem;
+    height: 50rem;
+    display: flex;
+    flex-direction: row;
+    border-radius: 1rem;
+  }
+
+  .sedans:hover,
+  .suvs:hover,
+  .luxury:hover {
+    transform: rotate(1turn);
+  }
+  .sedans {
+    border-radius: 1rem 0rem 0rem 1rem;
+  }
+  section {
+    width: 33.33%;
+    height: auto;
+  }
+
+  .back_sedans {
+    border-radius: 1rem 0rem 0rem 1rem;
+  }
+
+  .luxury {
+    border-radius: 0rem 1rem 1rem 0rem;
+  }
+  .back_luxury {
+    border-radius: 0rem 1rem 1rem 0rem;
+  }
+
+  .button_sedans,
+  .button_suvs,
+  .button_luxury {
+    margin-top: 5rem;
+  }
+}
